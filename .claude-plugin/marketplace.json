@@ -1,43 +1,44 @@
 {
-  "name": "anthropic-agent-skills",
+  "name": "hakub-skills",
   "owner": {
-    "name": "Keith Lazuka",
-    "email": "klazuka@anthropic.com"
+    "name": "Jakub Hampl",
+    "email": "hakub.jozak@gmail.com"
   },
   "metadata": {
-    "description": "Anthropic example skills",
+    "description": "Custom skills for development, infrastructure, and productivity automation",
     "version": "1.0.0"
   },
   "plugins": [
     {
-      "name": "document-skills",
-      "description": "Collection of document processing suite including Excel, Word, PowerPoint, and PDF capabilities",
+      "name": "development-tools",
+      "description": "Development and infrastructure tools including YouTrack automation, browser testing, tmux control, and slash command management",
       "source": "./",
       "strict": false,
       "skills": [
-        "./document-skills/xlsx",
-        "./document-skills/docx",
-        "./document-skills/pptx",
-        "./document-skills/pdf"
+        "./claude-skill-youtrack",
+        "./local-browser-testing",
+        "./slash-commands",
+        "./tmux-control"
       ]
     },
     {
-      "name": "example-skills",
-      "description": "Collection of example skills demonstrating various capabilities including skill creation, MCP building, visual design, algorithmic art, internal communications, web testing, artifact building, Slack GIFs, and theme styling",
+      "name": "rails-tools",
+      "description": "Ruby on Rails development tools including premailer-rails configuration and RubyGem documentation fetching",
       "source": "./",
       "strict": false,
       "skills": [
-        "./algorithmic-art",
-        "./brand-guidelines",
-        "./canvas-design",
-        "./frontend-design",
-        "./internal-comms",
-        "./mcp-builder",
-        "./skill-creator",
-        "./slack-gif-creator",
-        "./theme-factory",
-        "./web-artifacts-builder",
-        "./webapp-testing"
+        "./premailer-rails",
+        "./rubygem-docs"
+      ]
+    },
+    {
+      "name": "productivity-tools",
+      "description": "Productivity and automation tools including Google Calendar integration and Syncthing control",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./google-calendar-skill",
+        "./syncthing-control"
       ]
     }
   ]
