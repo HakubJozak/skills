@@ -1,0 +1,68 @@
+#!/bin/bash
+# AI Model Intelligence - Main launcher script
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+show_help() {
+    cat << EOF
+AI Model Intelligence - Report on AI model capabilities and costs
+
+Usage: ai-intel [command] [options]
+
+Commands:
+    update              Update pricing data from providers
+    pricing             View current pricing table
+    estimate            Estimate monthly costs
+    privacy             Review privacy policies and compliance
+    help                Show this help message
+
+Examples:
+    # Update pricing data
+    ai-intel update
+
+    # View all pricing
+    ai-intel pricing
+
+    # Estimate costs for 1000 users
+    ai-intel estimate --users 1000 --requests-per-user 50 \\
+                     --avg-input-tokens 500 --avg-output-tokens 200
+
+    # Compare costs across models
+    ai-intel estimate --users 10000 --requests-per-user 100 \\
+                     --avg-input-tokens 800 --avg-output-tokens 400 --compare
+
+    # Check specific model
+    ai-intel estimate --users 5000 --requests-per-user 30 \\
+                     --avg-input-tokens 600 --avg-output-tokens 300 \\
+                     --model "claude-sonnet-4-5"
+
+    # Review privacy policies
+    ai-intel privacy
+
+EOF
+}
+
+case "${1:-help}" in
+    update)
+        python3 "$SCRIPT_DIR/fetch_pricing.py"
+        ;;
+    pricing)
+        python3 "$SCRIPT_DIR/view_pricing.py"
+        ;;
+    estimate)
+        shift
+        python3 "$SCRIPT_DIR/estimate_costs.py" "$@"
+        ;;
+    privacy)
+        python3 "$SCRIPT_DIR/check_privacy.py"
+        ;;
+    help|--help|-h)
+        show_help
+        ;;
+    *)
+        echo "Unknown command: $1"
+        echo
+        show_help
+        exit 1
+        ;;
+esac

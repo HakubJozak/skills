@@ -1,0 +1,265 @@
+{
+  "last_updated": "2026-01-26T15:05:29.661537",
+  "providers": {
+    "openai": {
+      "models": {
+        "gpt-4-turbo": {
+          "input_price_per_1m": 10.0,
+          "output_price_per_1m": 30.0,
+          "context_window": 128000,
+          "capabilities": [
+            "function_calling",
+            "vision",
+            "json_mode",
+            "streaming"
+          ]
+        },
+        "gpt-4": {
+          "input_price_per_1m": 30.0,
+          "output_price_per_1m": 60.0,
+          "context_window": 8192,
+          "capabilities": [
+            "function_calling",
+            "json_mode",
+            "streaming"
+          ]
+        },
+        "gpt-3.5-turbo": {
+          "input_price_per_1m": 0.5,
+          "output_price_per_1m": 1.5,
+          "context_window": 16385,
+          "capabilities": [
+            "function_calling",
+            "json_mode",
+            "streaming"
+          ]
+        },
+        "gpt-4o": {
+          "input_price_per_1m": 5.0,
+          "output_price_per_1m": 15.0,
+          "context_window": 128000,
+          "capabilities": [
+            "function_calling",
+            "vision",
+            "json_mode",
+            "streaming",
+            "audio"
+          ]
+        },
+        "o1-preview": {
+          "input_price_per_1m": 15.0,
+          "output_price_per_1m": 60.0,
+          "context_window": 128000,
+          "capabilities": [
+            "reasoning",
+            "streaming"
+          ]
+        },
+        "o1-mini": {
+          "input_price_per_1m": 3.0,
+          "output_price_per_1m": 12.0,
+          "context_window": 128000,
+          "capabilities": [
+            "reasoning",
+            "streaming"
+          ]
+        }
+      },
+      "privacy": {
+        "training_data_usage": "Opt-out available via zero retention",
+        "data_retention": "30 days default",
+        "zero_retention": "Available for API usage",
+        "compliance": [
+          "SOC2",
+          "GDPR"
+        ]
+      }
+    },
+    "anthropic": {
+      "models": {
+        "claude-opus-4-5": {
+          "input_price_per_1m": 15.0,
+          "output_price_per_1m": 75.0,
+          "context_window": 200000,
+          "capabilities": [
+            "function_calling",
+            "vision",
+            "streaming",
+            "extended_thinking"
+          ]
+        },
+        "claude-sonnet-4-5": {
+          "input_price_per_1m": 3.0,
+          "output_price_per_1m": 15.0,
+          "context_window": 200000,
+          "capabilities": [
+            "function_calling",
+            "vision",
+            "streaming"
+          ]
+        },
+        "claude-haiku-4": {
+          "input_price_per_1m": 0.8,
+          "output_price_per_1m": 4.0,
+          "context_window": 200000,
+          "capabilities": [
+            "function_calling",
+            "vision",
+            "streaming"
+          ]
+        },
+        "claude-sonnet-3-5": {
+          "input_price_per_1m": 3.0,
+          "output_price_per_1m": 15.0,
+          "context_window": 200000,
+          "capabilities": [
+            "function_calling",
+            "vision",
+            "streaming"
+          ]
+        }
+      },
+      "privacy": {
+        "training_data_usage": "Not used for training",
+        "data_retention": "No data retention",
+        "zero_retention": "Default behavior",
+        "compliance": [
+          "SOC2",
+          "HIPAA",
+          "GDPR"
+        ]
+      }
+    },
+    "google": {
+      "models": {
+        "gemini-1.5-pro": {
+          "input_price_per_1m": 1.25,
+          "output_price_per_1m": 5.0,
+          "context_window": 2000000,
+          "capabilities": [
+            "function_calling",
+            "vision",
+            "streaming",
+            "extremely_long_context"
+          ]
+        },
+        "gemini-1.5-flash": {
+          "input_price_per_1m": 0.075,
+          "output_price_per_1m": 0.3,
+          "context_window": 1000000,
+          "capabilities": [
+            "function_calling",
+            "vision",
+            "streaming",
+            "long_context"
+          ]
+        },
+        "gemini-2.0-flash": {
+          "input_price_per_1m": 0.1,
+          "output_price_per_1m": 0.4,
+          "context_window": 1000000,
+          "capabilities": [
+            "function_calling",
+            "vision",
+            "streaming",
+            "multimodal"
+          ]
+        }
+      },
+      "privacy": {
+        "training_data_usage": "Varies by tier",
+        "data_retention": "Varies (0-18 months)",
+        "zero_retention": "Available for enterprise",
+        "compliance": [
+          "SOC2",
+          "GDPR",
+          "ISO27001"
+        ]
+      }
+    },
+    "mistral": {
+      "models": {
+        "mistral-large": {
+          "input_price_per_1m": 4.0,
+          "output_price_per_1m": 12.0,
+          "context_window": 128000,
+          "capabilities": [
+            "function_calling",
+            "json_mode",
+            "streaming"
+          ]
+        },
+        "mistral-medium": {
+          "input_price_per_1m": 2.7,
+          "output_price_per_1m": 8.1,
+          "context_window": 32000,
+          "capabilities": [
+            "function_calling",
+            "streaming"
+          ]
+        },
+        "mistral-small": {
+          "input_price_per_1m": 1.0,
+          "output_price_per_1m": 3.0,
+          "context_window": 32000,
+          "capabilities": [
+            "function_calling",
+            "streaming"
+          ]
+        }
+      },
+      "privacy": {
+        "training_data_usage": "Not used for training",
+        "data_retention": "No retention by default",
+        "zero_retention": "Default behavior",
+        "compliance": [
+          "SOC2",
+          "GDPR"
+        ]
+      }
+    },
+    "meta": {
+      "models": {
+        "llama-3.3-70b": {
+          "input_price_per_1m": 0.88,
+          "output_price_per_1m": 0.88,
+          "context_window": 128000,
+          "capabilities": [
+            "open_source",
+            "streaming"
+          ],
+          "note": "Pricing via Together.ai"
+        },
+        "llama-3.1-405b": {
+          "input_price_per_1m": 3.5,
+          "output_price_per_1m": 3.5,
+          "context_window": 128000,
+          "capabilities": [
+            "open_source",
+            "streaming",
+            "function_calling"
+          ],
+          "note": "Pricing via Together.ai"
+        },
+        "llama-3.1-70b": {
+          "input_price_per_1m": 0.88,
+          "output_price_per_1m": 0.88,
+          "context_window": 128000,
+          "capabilities": [
+            "open_source",
+            "streaming"
+          ],
+          "note": "Pricing via Together.ai"
+        }
+      },
+      "privacy": {
+        "training_data_usage": "Depends on provider",
+        "data_retention": "Varies by hosting provider",
+        "zero_retention": "Available with self-hosting",
+        "compliance": [
+          "Varies by provider"
+        ]
+      }
+    }
+  }
+}

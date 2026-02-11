@@ -1,0 +1,28 @@
+services:
+  playwright:
+    image: mcr.microsoft.com/playwright-mcp:latest
+    container_name: playwright-mcp
+    restart: unless-stopped
+    ipc: host
+    ports:
+      - "8931:8931"
+    extra_hosts:
+      - "hostmachine:host-gateway"
+    command: node cli.js --headless --browser chromium --no-sandbox --port 8931
+    stdin_open: true
+    init: true
+
+  # Alternative: Playwright server mode (uncomment to use)
+  # playwright-server:
+  #   image: mcr.microsoft.com/playwright:v1.58.0-noble
+  #   container_name: playwright-server
+  #   restart: unless-stopped
+  #   ipc: host
+  #   ports:
+  #     - "3000:3000"
+  #   user: pwuser
+  #   working_dir: /home/pwuser
+  #   extra_hosts:
+  #     - "hostmachine:host-gateway"
+  #   command: /bin/sh -c "npx -y playwright@1.58.0 run-server --port 3000 --host 0.0.0.0"
+  #   init: true

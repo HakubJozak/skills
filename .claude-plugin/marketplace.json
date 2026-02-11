@@ -6,17 +6,38 @@
   },
   "metadata": {
     "description": "Custom skills for development, infrastructure, and productivity automation",
-    "version": "1.0.0"
+    "version": "1.3.0"
   },
   "plugins": [
     {
-      "name": "development-tools",
-      "description": "Development and infrastructure tools including YouTrack automation, browser testing, tmux control, and slash command management",
+      "name": "all",
+      "description": "Complete hakub-skills collection: development tools, Rails helpers, and productivity automation",
       "source": "./",
       "strict": false,
       "skills": [
+        "./ai-model-intel",
+        "./car-picker",
+        "./claude-skill-youtrack",
+        "./google-calendar-skill",
+        "./local-browser-testing",
+        "./playwright-docker",
+        "./premailer-rails",
+        "./rubygem-docs",
+        "./slash-commands",
+        "./syncthing-control",
+        "./tmux-control"
+      ]
+    },
+    {
+      "name": "development-tools",
+      "description": "Development and infrastructure tools including YouTrack automation, browser testing, tmux control, AI model intelligence, and slash command management",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./ai-model-intel",
         "./claude-skill-youtrack",
         "./local-browser-testing",
+        "./playwright-docker",
         "./slash-commands",
         "./tmux-control"
       ]

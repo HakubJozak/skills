@@ -4,21 +4,32 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a collection of Claude Skills - folders containing instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. The repository is organized into:
+This is a collection of Claude Skills - folders containing instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks.
 
-### Custom Skills (Root Directory)
-Personal and project-specific skills for development and productivity:
-- **YouTrack automation** - Issue management and agile board operations
-- **Google Calendar** - Calendar integration and scheduling
-- **Browser testing** - Local web application testing
-- **Rails tools** - Premailer-rails and RubyGem documentation
-- **Infrastructure** - Syncthing, tmux, and slash command management
+### Custom Skills
+Personal skills for development, Rails, and productivity automation:
+- **AI Model Intel** (`ai-model-intel/`) - Report on AI model capabilities, costs, and privacy policies
+- **Car Picker** (`car-picker/`) - Research Czech car market for family vehicles
+- **YouTrack automation** (`claude-skill-youtrack/`) - Issue management and agile board operations
+- **Google Calendar** (`google-calendar-skill/`) - Calendar integration and scheduling
+- **Browser testing** (`local-browser-testing/`) - Local web application testing with Playwright
+- **Playwright Docker** (`playwright-docker/`) - Run Playwright in Docker to avoid browser conflicts
+- **Premailer Rails** (`premailer-rails/`) - Rails email CSS inlining configuration guide
+- **RubyGem docs** (`rubygem-docs/`) - Fetch and store Ruby gem documentation
+- **Slash commands** (`slash-commands/`) - Create and manage Claude Code slash commands
+- **Syncthing control** (`syncthing-control/`) - Control and monitor Syncthing file synchronization
+- **tmux control** (`tmux-control/`) - Manage tmux sessions for background processes
+- **Uptime Kuma** (`uptime-kuma-control/`) - Manage Uptime Kuma monitoring service
 
-### Anthropic Skills (_anthropic Directory)
-Official Anthropic skills and development utilities:
-- **Example skills** (open source, Apache 2.0): Demonstration skills in various categories (creative, development, enterprise)
-- **Document skills** (source-available): Production skills for document manipulation (docx, pdf, pptx, xlsx)
-- **Skill development utilities**: Scripts for creating, validating, and packaging skills
+### Installing Anthropic Skills
+
+Official Anthropic skills (document processing, skill creation tools, etc.) are maintained separately. Install them directly from the official marketplace:
+
+```bash
+/plugin marketplace add anthropics/skills
+/plugin install document-skills@anthropic-agent-skills
+/plugin install example-skills@anthropic-agent-skills
+```
 
 ## Skill Architecture
 
@@ -100,33 +111,53 @@ Validation checks:
 
 ## Plugin Marketplace
 
-The repository provides two Claude Code plugin marketplaces:
+This repository provides a personal Claude Code plugin marketplace with four plugin bundles:
 
-### Custom Skills Marketplace (Root)
-Configuration in `.claude-plugin/marketplace.json` with three plugin bundles:
+Configuration in `.claude-plugin/marketplace.json`:
+- **all**: Complete collection (all 8 skills in one command)
 - **development-tools**: YouTrack automation, browser testing, tmux control, slash commands
 - **rails-tools**: Premailer-rails configuration, RubyGem documentation
 - **productivity-tools**: Google Calendar integration, Syncthing control
 
-Install via:
-```
-/plugin marketplace add HakubJozak/skills
+### Installation
+
+#### On Your Machines (Local Marketplace)
+```bash
+# Add local marketplace
+/plugin marketplace add /home/dev/skills
+
+# Install all skills at once
+/plugin install all@hakub-skills
+
+# Or install specific bundles
 /plugin install development-tools@hakub-skills
 /plugin install rails-tools@hakub-skills
 /plugin install productivity-tools@hakub-skills
 ```
 
-### Anthropic Skills Marketplace (_anthropic)
-Configuration in `_anthropic/.claude-plugin/marketplace.json` with two plugin bundles:
-- **document-skills**: Excel, Word, PowerPoint, PDF capabilities
-- **example-skills**: Collection of demonstration skills
-
-Install via:
-```
+#### Installing Anthropic Skills
+```bash
 /plugin marketplace add anthropics/skills
 /plugin install document-skills@anthropic-agent-skills
 /plugin install example-skills@anthropic-agent-skills
 ```
+
+## Multi-Machine Setup
+
+This repository uses a hybrid distribution strategy:
+
+### Your Setup
+- **Primary Machine**: Edit skills, commit to private GitHub repository
+- **Syncthing**: Automatically syncs changes to all your machines
+- **Git**: Version control and private backup on GitHub
+
+### On New Machines
+1. Wait for Syncthing to sync `/home/dev/skills` directory
+2. In Claude Code: `/plugin marketplace add /home/dev/skills`
+3. Install skills: `/plugin install all@hakub-skills`
+4. (Optional) Install Anthropic skills as shown above
+
+See `SETUP.md` for detailed new machine setup instructions.
 
 ## Key Design Principles
 
@@ -156,24 +187,28 @@ Skills are for AI agents, not human documentation.
 
 ## Important Files and Directories
 
-### Root Level (Custom Skills)
-- `.claude-plugin/marketplace.json` - Custom skills marketplace configuration
+### Repository Files
+- `.claude-plugin/marketplace.json` - Marketplace configuration (4 plugin bundles)
+- `CLAUDE.md` - This file (AI-readable documentation)
+- `SETUP.md` - Quick reference for new machine setup
+- `.gitignore` - Git exclusions
+
+### Custom Skills (12 Skills)
+- `ai-model-intel/` - AI model capabilities, costs, and privacy intelligence
+- `car-picker/` - Czech car market research for family vehicles
 - `claude-skill-youtrack/` - YouTrack API automation skill
 - `google-calendar-skill/` - Google Calendar integration
 - `local-browser-testing/` - Browser automation for local testing
+- `playwright-docker/` - Playwright in Docker containers
 - `premailer-rails/` - Rails email CSS inlining guide
 - `rubygem-docs/` - RubyGem documentation fetcher
 - `slash-commands/` - Claude Code slash command builder
 - `syncthing-control/` - Syncthing REST API controller
 - `tmux-control/` - Tmux session management
+- `uptime-kuma-control/` - Uptime Kuma monitoring management
 
-### _anthropic Directory (Anthropic Skills)
-- `_anthropic/.claude-plugin/marketplace.json` - Anthropic marketplace configuration
-- `_anthropic/agent_skills_spec.md` - Official specification for skill format
-- `_anthropic/skill-creator/` - Meta-skill with comprehensive skill development guidance
-- `_anthropic/template-skill/` - Minimal skill template for starting new skills
-- `_anthropic/document-skills/` - Production-grade document manipulation skills (source-available)
-- `_anthropic/README.md`, `_anthropic/THIRD_PARTY_NOTICES.md` - Anthropic documentation
+### Anthropic Skills (External)
+Install separately from official marketplace: `/plugin marketplace add anthropics/skills`
 
 ## Git Configuration
 
