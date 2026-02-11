@@ -1,6 +1,6 @@
 ---
 name: typst-editor
-description: Edit, create, and compile Typst (.typ) documents. This skill should be used when working with Typst source files, generating PDFs from Typst, or needing Typst syntax guidance. Covers markup, scripting, page layout, tables, math, CLI compilation, and visual PDF validation.
+description: Edit, create, and compile Typst (.typ) documents. This skill should be used when working with Typst source files, generating PDFs from Typst, needing Typst syntax guidance. Covers markup, scripting, page layout, tables, math, CLI compilation, Emacs setup and visual PDF validation.
 ---
 
 # Typst Editor
