@@ -25,7 +25,10 @@
         "./rubygem-docs",
         "./slash-commands",
         "./syncthing-control",
-        "./tmux-control"
+        "./tmux-control",
+        "./onyx-api-developer",
+        "./uptime-kuma-control",
+        "./typst-editor"
       ]
     },
     {
@@ -39,7 +42,9 @@
         "./local-browser-testing",
         "./playwright-docker",
         "./slash-commands",
-        "./tmux-control"
+        "./tmux-control",
+        "./onyx-api-developer",
+        "./uptime-kuma-control"
       ]
     },
     {
@@ -59,7 +64,8 @@
       "strict": false,
       "skills": [
         "./google-calendar-skill",
-        "./syncthing-control"
+        "./syncthing-control",
+        "./typst-editor"
       ]
     }
   ]
