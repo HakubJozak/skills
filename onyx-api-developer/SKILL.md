@@ -1,4 +1,5 @@
 ---
+name: onyx-api-developer
 description: Integrate Onyx API into your application. Use when you are using Onyx, Onyx API, writing connectors or deploying Onyx. Contains insights about Onyx internals and implementation. 
 scope: all
 ---
