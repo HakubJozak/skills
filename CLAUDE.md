@@ -8,6 +8,7 @@ This is a collection of Claude Skills - folders containing instructions, scripts
 
 ### Custom Skills
 Personal skills for development, Rails, and productivity automation:
+- **Anthropic Ruby** (`anthropic-ruby/`) - Use the Anthropic API in Ruby: messages, streaming, tool use, vision
 - **AI Model Intel** (`ai-model-intel/`) - Report on AI model capabilities, costs, and privacy policies
 - **Car Picker** (`car-picker/`) - Research Czech car market for family vehicles
 - **YouTrack automation** (`claude-skill-youtrack/`) - Issue management and agile board operations

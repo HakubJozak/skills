@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Custom skills for development, infrastructure, and productivity automation",
-    "version": "1.4.0"
+    "version": "1.5.0"
   },
   "plugins": [
     {
@@ -15,6 +15,7 @@
       "source": "./",
       "strict": false,
       "skills": [
+        "./anthropic-ruby",
         "./ai-model-intel",
         "./car-picker",
         "./claude-skill-youtrack",
@@ -51,10 +52,11 @@
     },
     {
       "name": "rails-tools",
-      "description": "Ruby on Rails development tools including premailer-rails configuration and RubyGem documentation fetching",
+      "description": "Ruby on Rails development tools including Anthropic API integration, premailer-rails configuration and RubyGem documentation fetching",
       "source": "./",
       "strict": false,
       "skills": [
+        "./anthropic-ruby",
         "./premailer-rails",
         "./rubygem-docs"
       ]
