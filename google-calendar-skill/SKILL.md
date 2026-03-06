@@ -20,7 +20,8 @@ Before using this skill, you must set up OAuth authentication:
 2. **Set up Google Cloud credentials:**
    - Follow the guide in `docs/google-cloud-setup.md`
    - Enable Google Calendar API
-   - Download `credentials.json` and save to `scripts/auth/credentials.json`
+   - Download `credentials.json` and save to `/home/dev/secrets/google-calendar/credentials.json`
+   - (The skill looks for credentials there, not in `scripts/auth/`)
 
 3. **Authenticate:**
    ```bash
@@ -138,9 +139,15 @@ node calendar-events-get.js --id "EVENT_ID"
 ```
 
 ### Create Event
+
+**IMPORTANT:** To create on a specific calendar (not primary), use `--calendar CALENDAR_ID`.
+Get the calendar ID from `node calendar-list.js`. Always inline the ID directly — do NOT
+use shell variables, as they do not persist across `&&` chains in the Bash tool.
+
 ```bash
-# Timed event
+# Timed event on a specific calendar
 node calendar-events-create.js \
+  --calendar "abc123@group.calendar.google.com" \
   --summary "Team Meeting" \
   --start "2025-11-20T14:00:00-08:00" \
   --end "2025-11-20T15:00:00-08:00" \
@@ -267,7 +274,7 @@ node calendar-events-create.js \
 ## Error Handling
 
 If scripts fail:
-- Check that `token.json` exists in `scripts/auth/`
+- Check that `tokens.json` exists in `/home/dev/secrets/google-calendar/`
 - If token is expired, run `npm run setup` again
 - Verify the user granted Google Calendar API permissions
 - Ensure date/time formats are valid ISO 8601
@@ -291,6 +298,8 @@ Common error patterns:
 6. **Use structured create** for events with specific requirements
 7. **Extract event IDs** from list/search results when updating or deleting
 8. **Present calendar data clearly** with dates, times, and attendee information
+9. **Always inline calendar IDs** — never use shell variables like `CAL_ID=...` when chaining commands with `&&`, as the Bash tool does not persist shell state between `&&` commands. The variable will be empty. Inline the calendar ID string directly in each command.
+10. **Use `--calendar` (not `--calendarId`)** to target a specific calendar in create/update/delete operations.
 
 ## Token Efficiency
 
