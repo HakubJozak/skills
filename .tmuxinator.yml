@@ -1,0 +1,8 @@
+# /home/dev/.config/tmuxinator/skills.yml
+
+name: skills
+root: ~/skills
+
+windows:
+  - cli: pwd
+  - opus: opus
