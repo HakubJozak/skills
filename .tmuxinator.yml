@@ -1,7 +1,7 @@
 # /home/dev/.config/tmuxinator/skills.yml
 
 name: skills
-root: ~/skills
+root: .
 
 windows:
   - cli: pwd
