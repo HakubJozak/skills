@@ -11,6 +11,7 @@ files with custom `x-*` extensions and managed via the `uc` CLI across a WireGua
 For full CLI reference and compose extension details, see:
 - `references/cheatsheet.md` — quick command reference
 - `references/compose-extensions.md` — x-ports, x-machines, and all uncloud compose extensions
+- `references/compose-build-spec.md` — full `build:` spec (context, dockerfile, args, cache, secrets, platforms, attestations, etc.)
 
 ## Key Workflows
 
