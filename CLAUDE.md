@@ -11,7 +11,6 @@ Personal skills for development, Rails, and productivity automation:
 - **Anthropic Ruby** (`anthropic-ruby/`) - Use the Anthropic API in Ruby: messages, streaming, tool use, vision
 - **AI Model Intel** (`ai-model-intel/`) - Report on AI model capabilities, costs, and privacy policies
 - **Car Picker** (`car-picker/`) - Research Czech car market for family vehicles
-- **YouTrack automation** (`claude-skill-youtrack/`) - Issue management and agile board operations
 - **Google Calendar** (`google-calendar-skill/`) - Calendar integration and scheduling
 - **Browser testing** (`local-browser-testing/`) - Local web application testing with Playwright
 - **Playwright Docker** (`playwright-docker/`) - Run Playwright in Docker to avoid browser conflicts
@@ -116,7 +115,7 @@ This repository provides a personal Claude Code plugin marketplace with four plu
 
 Configuration in `.claude-plugin/marketplace.json`:
 - **all**: Complete collection (all 8 skills in one command)
-- **development-tools**: YouTrack automation, browser testing, tmux control, slash commands
+- **development-tools**: browser testing, tmux control, slash commands
 - **rails-tools**: Premailer-rails configuration, RubyGem documentation
 - **productivity-tools**: Google Calendar integration, Syncthing control
 
@@ -197,7 +196,6 @@ Skills are for AI agents, not human documentation.
 ### Custom Skills (12 Skills)
 - `ai-model-intel/` - AI model capabilities, costs, and privacy intelligence
 - `car-picker/` - Czech car market research for family vehicles
-- `claude-skill-youtrack/` - YouTrack API automation skill
 - `google-calendar-skill/` - Google Calendar integration
 - `local-browser-testing/` - Browser automation for local testing
 - `playwright-docker/` - Playwright in Docker containers

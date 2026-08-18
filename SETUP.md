@@ -55,13 +55,12 @@ Official Anthropic skills for document processing and examples:
 
 After installation:
 - Skills should appear in Claude Code
-- Test by asking about YouTrack, tmux, or calendar
+- Test by asking about tmux or calendar
 - Skills will respond when their functionality is needed
 
 ## Skills Included
 
 Your custom skills:
-- **YouTrack** - Issue management and agile board operations
 - **Google Calendar** - Calendar integration and scheduling
 - **Browser testing** - Playwright automation for local testing
 - **Premailer Rails** - Email CSS inlining guide

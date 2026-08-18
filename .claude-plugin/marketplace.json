@@ -18,7 +18,6 @@
         "./anthropic-ruby",
         "./ai-model-intel",
         "./car-picker",
-        "./claude-skill-youtrack",
         "./google-calendar-skill",
         "./local-browser-testing",
         "./playwright-docker",
@@ -35,12 +34,11 @@
     },
     {
       "name": "development-tools",
-      "description": "Development and infrastructure tools including YouTrack automation, browser testing, tmux control, AI model intelligence, and slash command management",
+      "description": "Development and infrastructure tools including browser testing, tmux control, AI model intelligence, and slash command management",
       "source": "./",
       "strict": false,
       "skills": [
         "./ai-model-intel",
-        "./claude-skill-youtrack",
         "./local-browser-testing",
         "./playwright-docker",
         "./slash-commands",
