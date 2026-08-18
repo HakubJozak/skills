@@ -3,6 +3,7 @@ name: tmux-control
 description: Control tmux sessions to monitor and manage background processes. Use when you need to check server logs, restart Rails/Sidekiq, view process output in other tmux panes/windows, or manage long-running development services.
 allowed-tools:
   - Bash
+model: sonnet
 ---
 
 # Tmux Session Control
