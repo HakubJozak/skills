@@ -20,6 +20,7 @@ Personal skills for development, Rails, and productivity automation:
 - **Syncthing control** (`syncthing-control/`) - Control and monitor Syncthing file synchronization
 - **tmux control** (`tmux-control/`) - Manage tmux sessions for background processes
 - **Uptime Kuma** (`uptime-kuma-control/`) - Manage Uptime Kuma monitoring service
+- **Writing offers** (`writing-offers/`) - Czech consulting offers (nabídka) as Typst PDF: template, pricing, standard terms
 
 ### Installing Anthropic Skills
 
