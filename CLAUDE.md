@@ -19,6 +19,7 @@ Personal skills for development, Rails, and productivity automation:
 - **Sticky notes** (`sticky-notes/`) - In-place review layer: pin comments to elements of an artifact, any web app, or a Rails view; export CSS path + text
 - **Slash commands** (`slash-commands/`) - Create and manage Claude Code slash commands
 - **Syncthing control** (`syncthing-control/`) - Control and monitor Syncthing file synchronization
+- **Tailwind best practices** (`tailwind-best-practices/`) - Tailwind v4 rules (CSS-first @theme, @utility, no v3 idioms); vendored from ofershap/tailwind-best-practices
 - **tmux control** (`tmux-control/`) - Manage tmux sessions for background processes
 - **Uptime Kuma** (`uptime-kuma-control/`) - Manage Uptime Kuma monitoring service
 - **Writing offers** (`writing-offers/`) - Czech consulting offers (nabídka) as Typst PDF: template, pricing, standard terms

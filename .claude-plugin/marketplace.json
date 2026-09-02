@@ -29,7 +29,8 @@
         "./onyx-api-developer",
         "./uptime-kuma-control",
         "./typst-editor",
-        "./tailscale-acl"
+        "./tailscale-acl",
+        "./tailwind-best-practices"
       ]
     },
     {
@@ -45,7 +46,8 @@
         "./tmux-control",
         "./onyx-api-developer",
         "./uptime-kuma-control",
-        "./tailscale-acl"
+        "./tailscale-acl",
+        "./tailwind-best-practices"
       ]
     },
     {
@@ -56,7 +58,8 @@
       "skills": [
         "./anthropic-ruby",
         "./premailer-rails",
-        "./rubygem-docs"
+        "./rubygem-docs",
+        "./tailwind-best-practices"
       ]
     },
     {
@@ -67,7 +70,8 @@
       "skills": [
         "./google-calendar-skill",
         "./syncthing-control",
-        "./typst-editor"
+        "./typst-editor",
+        "./tailwind-best-practices"
       ]
     }
   ]
