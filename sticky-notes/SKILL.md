@@ -27,7 +27,7 @@ defines `window.KZStickyNotes = { mount({ key, root }), unmount(), refresh() }`.
 |---|---|
 | HTML file / artifact | `inject.py PAGE.html <page-key>` → publish. Idempotent; handles body-less fragments. |
 | any running app, ad hoc | Playwright: `page.addScriptTag({ path: "~/.claude/skills/sticky-notes/sticky-notes.js" })` then `page.evaluate(() => KZStickyNotes.mount())`. Chrome MCP: paste the file into `javascript_tool`, then mount. For Jakub's own clicks: `bookmarklet.py [key] \| wl-copy` → bookmark. |
-| Rails app, permanent | `rails/install.sh APP_ROOT` writes a self-contained `sticky_notes_controller.js` (core inlined, works with importmap/vite/esbuild) + `app/views/application/_sticky_notes.html.erb`; add `<%= render "sticky_notes" %>` before `</body>`. Renders in development or with `STICKY_NOTES=1`. |
+| Rails app, permanent | `rails/install.sh APP_ROOT` writes a self-contained controller (core inlined) + `app/views/application/_sticky_notes.html.erb`, development + staging only. importmap → `app/javascript/dev/sticky_notes_controller.js`, pinned under the env condition. vite → `<sourceCodeDir>/entrypoints/sticky_notes.js`, tagged only when the partial renders. Then `<%= render "sticky_notes" %>` before `</body>`; from layouts whose controllers do not inherit `ApplicationController` (Portal HQ) use `render "application/sticky_notes"`. Re-run after editing the core. |
 
 **Page key.** Artifacts: fixed slug `<project>-<page>` (`krouzitko-domain-model`) —
 the artifact viewer changes paths per version, so never key by path. Existing
@@ -81,6 +81,7 @@ controller — re-run `install.sh`.
 
 - Injecting an artifact with a key that differs from the previous publish → reviewer's notes "vanish". Look up the key first.
 - Marking the Rails controller element `data-turbo-temporary` → Turbo drops it from the restoration snapshot and the bar is gone after Back. Only the layer's own nodes carry that attribute.
+- Putting the controller under `controllers/` → `pin_all_from`/manifest ships it to production. It lives in `dev/` (importmap) or as its own entrypoint (vite) and registers itself.
 - Rebuilding a page so IDs/order change → notes orphaned. Prefer stable `id`s (Rails `dom_id`) on things that get reviewed.
 - Sprinkling `data-sticky-notes`/ids everywhere up front → drift and noise. Add an `id` only where an export said "unanchored".
 - Answering the export in prose only → apply the changes and redeploy; the export is a change request, not a discussion.
