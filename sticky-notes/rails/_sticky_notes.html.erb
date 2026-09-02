@@ -1,7 +1,0 @@
-<%# Review overlay (skill ~/.claude/skills/sticky-notes): ✎ Notes bar bottom-right,
-    notes stay in the reviewer's localStorage, export = CSS path · text · comment.
-    Dev + staging only; the script is registered under the same condition. %>
-<% if Rails.env.development? || Rails.env.staging? %>
-  <%= __SCRIPT_TAG__ %>
-  <div data-controller="sticky-notes" data-sticky-notes-key-value="<%= local_assigns[:key] %>"></div>
-<% end %>
