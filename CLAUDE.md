@@ -16,6 +16,7 @@ Personal skills for development, Rails, and productivity automation:
 - **Playwright Docker** (`playwright-docker/`) - Run Playwright in Docker to avoid browser conflicts
 - **Premailer Rails** (`premailer-rails/`) - Rails email CSS inlining configuration guide
 - **RubyGem docs** (`rubygem-docs/`) - Fetch and store Ruby gem documentation
+- **Sticky notes** (`sticky-notes/`) - In-place review layer: pin comments to elements of an artifact, any web app, or a Rails view; export CSS path + text
 - **Slash commands** (`slash-commands/`) - Create and manage Claude Code slash commands
 - **Syncthing control** (`syncthing-control/`) - Control and monitor Syncthing file synchronization
 - **tmux control** (`tmux-control/`) - Manage tmux sessions for background processes
